@@ -10,4 +10,9 @@ public class Traitor implements BehavioralStrategy {
     public void seenBehaviorWas(Behavior cardTwo) {
 
     }
+
+    @Override
+    public String name() {
+        return "Traitor";
+    }
 }

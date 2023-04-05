@@ -10,4 +10,9 @@ public class Cooperator implements BehavioralStrategy {
     public void seenBehaviorWas(Behavior cardTwo) {
 
     }
+
+    @Override
+    public String name() {
+        return "Cooperator";
+    }
 }

@@ -2,14 +2,17 @@ package evolution;
 
 import evolution.strategy.BehavioralStrategy;
 
+import java.util.stream.IntStream;
+
 import static evolution.Behavior.BETRAYAL;
 import static evolution.Behavior.COOPERATION;
 
 class PlayGame {
 
     GameResult play(BehavioralStrategy player, BehavioralStrategy anotherPlayer) {
-        Behaviors played = Interaction.between(player, anotherPlayer);
-        return calculatePoints(played);
+        return IntStream.range(0, 200)
+                .mapToObj(i -> calculatePoints(Interaction.between(player, anotherPlayer)))
+                .reduce(GameResult.zeroZero, GameResult::add);
     }
 
     private GameResult calculatePoints(Behaviors played) {
