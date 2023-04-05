@@ -1,4 +1,6 @@
 package evolution;
 
-public class Behavior {
+public enum Behavior {
+    COOPERATION,
+    BETRAYAL
 }

@@ -4,7 +4,7 @@ import evolution.Behavior;
 
 public class Traitor implements BehavioralStrategy {
     public Behavior showBehavior() {
-        return null;
+        return Behavior.BETRAYAL;
     }
 
     public void seenBehaviorWas(Behavior cardTwo) {
