@@ -2,6 +2,7 @@ package evolution;
 
 class GameResult {
     public static GameResult zeroZero = new GameResult(0, 0);
+
     private final int scoreOne;
     private final int scoreTwo;
 
@@ -16,5 +17,13 @@ class GameResult {
 
     public static GameResult add(GameResult one, GameResult two) {
         return new GameResult(one.scoreOne + two.scoreOne, one.scoreTwo + two.scoreTwo);
+    }
+
+    public int getScoreOne() {
+        return scoreOne;
+    }
+
+    public int getScoreTwo() {
+        return scoreTwo;
     }
 }

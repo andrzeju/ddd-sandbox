@@ -1,16 +1,18 @@
 package evolution;
 
 import evolution.strategy.Cooperator;
+import evolution.strategy.Randomer;
 import evolution.strategy.Traitor;
+
+import java.util.List;
+import java.util.Map;
 
 public class StartGame {
 
     public static void main(String[] args) {
-        PlayGame playGame = new PlayGame();
-        Traitor one = new Traitor();
-        Cooperator two = new Cooperator();
-        GameResult play = playGame.play(one, two);
+        Tournament tournament = new Tournament();
+        Map<String, Integer> tournamentScore = tournament.play(List.of(new Traitor(), new Cooperator(), new Randomer()));
 
-        System.out.println(play.printResult(one.name(), two.name()));
+        System.out.println(tournamentScore);
     }
 }

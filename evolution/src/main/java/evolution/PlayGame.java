@@ -9,8 +9,10 @@ import static evolution.Behavior.COOPERATION;
 
 class PlayGame {
 
-    GameResult play(BehavioralStrategy player, BehavioralStrategy anotherPlayer) {
-        return IntStream.range(0, 200)
+    public static final int GAMES_PLAYED = 200;
+
+    GameResult between(BehavioralStrategy player, BehavioralStrategy anotherPlayer) {
+        return IntStream.range(0, GAMES_PLAYED)
                 .mapToObj(i -> calculatePoints(Interaction.between(player, anotherPlayer)))
                 .reduce(GameResult.zeroZero, GameResult::add);
     }
